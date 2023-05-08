@@ -32,8 +32,7 @@ a {
 
 .sidebar {
   color: white;
-  min-height: 600px;
-  width: 20%;
+  height: 600px;
   min-width: 325px;
   background-color: #252422;
   border-radius: 20px;
