@@ -10,6 +10,7 @@ function Simulation() {
       }
       c.printIterationCount(f);
     }
+
     function i() {
       var a = d.getCellState(e.cellIndex),
         f = (a + 1) % b.get.behavior.colors.length;
@@ -81,7 +82,7 @@ function Simulation() {
         c = document.getElementById("iterationCount"),
         d = document.getElementById("theBoard"),
         f = d.getContext("2d"),
-        g = 8,
+        g = 15,
         h = 0.5,
         i = [
           [
@@ -135,10 +136,10 @@ function Simulation() {
           var a = e.x * g + h + g / 2,
             b = e.y * g + h + g / 2,
             c = i[e.orientation];
-          (f.fillStyle = "#000"),
+          (f.fillStyle = "#555"),
             f.beginPath(),
             f.moveTo(a + c[0].x, b + c[0].y),
-            f.lineTo(a + c[1].x, b + c[1].y),
+            f.lineTo(a + c[1].x , b + c[1].y),
             f.lineTo(a + c[2].x, b + c[2].y),
             f.fill();
         },

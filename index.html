@@ -20,64 +20,6 @@
 
   <script>
     var sim = new Simulation();
-
     sim.run();
-
-    document.getElementById("initialOrientation").onchange = function () {
-      sim.Options.setAntOrientation(this.selectedIndex);
-
-      sim.run();
-    };
-
-    document.getElementById("behaviors").onchange = function () {
-      var customBehavior = document.getElementById("customBehavior");
-
-      if (this.options.length - 1 == this.selectedIndex) {
-        customBehavior.value = "";
-        customBehavior.parentNode.classList.remove("hide");
-        customBehavior.parentNode.classList.add("show");
-        sim.reset();
-      } else {
-        customBehavior.parentNode.classList.remove("show");
-        customBehavior.parentNode.classList.add("hide");
-
-        sim.Options.setAntBehavior(this.selectedIndex);
-        sim.run();
-      }
-    };
-
-    document.getElementById("gridSize").onchange = function () {
-      sim.Options.setGridSize(this.options[this.selectedIndex].value);
-
-      sim.run();
-    };
-
-    document.getElementById("iterations").onchange = function () {
-      sim.Options.setRefreshInterval(this.options[this.selectedIndex].value);
-
-      sim.run();
-    };
-
-    document.getElementById("delay").onchange = function () {
-      sim.Options.setRefreshDelayInterval(
-        this.options[this.selectedIndex].value
-      );
-
-      sim.run();
-    };
-
-    custbehavior.onkeyup = function (e) {
-      if ([46, 8, 9, 37, 39, 76, 82, 108, 114].indexOf(e.keyCode) !== -1) {
-        if (this.value.length === 0) {
-          sim.reset();
-        } else {
-          this.value = this.value.toUpperCase();
-
-          sim.Options.setCustomAntBehavior(this.value);
-
-          sim.run();
-        }
-      }
-    };
   </script>
 </body>
