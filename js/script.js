@@ -23,11 +23,10 @@ function Simulation() {
       )
         return !0;
     }
-    g(),
-      (a = setInterval(h, b.get.milliseconds)),
-      c.printBehaviorAlgorithm(b.get.behavior);
+    g(), (a = setInterval(h, b.get.milliseconds));
     var f = 0;
   }
+
   function g() {
     clearInterval(a),
       c.clearBehaviorAlgorithm(),
@@ -35,61 +34,24 @@ function Simulation() {
       d.init(),
       e.init();
   }
+
   var a = null,
     b = (function () {
       function c() {
         return void 0 != b
           ? b
-          : (b = [
-              { turns: "RL".split(""), colors: ["#5f5", "#f55"] },
-              { turns: "RLR".split(""), colors: d(3) },
-              { turns: "LLRR".split(""), colors: d(4) },
-              { turns: "RLLR".split(""), colors: d(4) },
-              { turns: "LRRRRRLLR".split(""), colors: d(9) },
-              { turns: "LLRRRLRLRLLR".split(""), colors: d(12) },
-              { turns: "RRLLLRLLLRRR".split(""), colors: d(12) },
-            ]);
-      }
-      function d(a) {
-        function e() {
-          for (var a = "0123456789ABCDEF".split(""), b = "#", c = 0; c < 6; c++)
-            b += a[Math.floor(16 * Math.random())];
-          return b;
-        }
-        function f(a) {
-          for (var c = 0, d = b.length; c < d; c++) b[c] == a && f(e());
-          return a;
-        }
-        for (var b = [], c = 0; c < a; c++) {
-          var d = f(e());
-          b.push(d);
-        }
-        return b;
+          : (b = [{ turns: "RL".split(""), colors: ["#5f5", "#f55"] }]);
       }
       var b,
         a = {
-          gridSize: 150,
+          gridSize: 50,
           behavior: c()[0],
           orientationIndex: 0,
           intervalCount: 1,
           milliseconds: 250,
         };
       return (
-        (function () {
-          for (
-            var b = c(),
-              d = document.getElementById("behaviors"),
-              e = 0,
-              f = b.length;
-            e < f;
-            e++
-          ) {
-            for (var g = "", h = 0, i = b[e].turns.length; h < i; h++)
-              g += b[e].turns[h];
-            d.appendChild(new Option(g, e));
-          }
-          d.appendChild(new Option("Custom", -1));
-        })(),
+        (function () {})(),
         {
           setGridSize: function (b) {
             a.gridSize = parseInt(b);
@@ -179,18 +141,6 @@ function Simulation() {
             f.lineTo(a + c[1].x, b + c[1].y),
             f.lineTo(a + c[2].x, b + c[2].y),
             f.fill();
-        },
-        printBehaviorAlgorithm: function (b) {
-          for (var c = "", d = 0, e = b.turns.length; d < e; d++)
-            c +=
-              '<span class="behavior" style="background-color:' +
-              b.colors[d] +
-              ' !important;"><img src="img/' +
-              b.turns[d] +
-              '.png" alt="' +
-              b.turns[d] +
-              '"/></span>';
-          a.innerHTML = c;
         },
         clearBehaviorAlgorithm: function () {
           a.innerHTML = "";
