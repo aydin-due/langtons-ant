@@ -1,25 +1,100 @@
 <!DOCTYPE html>
-<link lang="en" />
-<meta charset="UTF-8" />
-<title>Langton's Ant</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>langton's ant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="sidebar">
+        <h1>
+          langton's ant
+          <br />
+          simulator
+        </h1>
+        <div class="counter-container">
+          <p>contador</p>
+          <p class="counter" id="iterationCount"></p>
+        </div>
+        <div class="button">
+          <img class="dark" src="img/restart-dark.png" />
+          <img class="light" src="img/restart-light.png" />
+          <a href="" onclick="restartSimulation()">reiniciar simulación</a>
+        </div>
+        <div class="tooltip info">
+          <p>información</p>
+          <span class="tooltip-content">
+            La Hormiga de Langton fue creada por Chris Langton en 1986. Una
+            hormiga se mueve por una cuadrícula bidimensional de células blancas
+            o negras. La hormiga puede moverse en una de cuatro direcciones
+            posibles: hacia arriba, hacia abajo, hacia la izquierda o hacia la
+            derecha. En cada iteración, la hormiga verifica el color de la
+            célula en la que se encuentra y toma una decisión basada en ese
+            color. Luego, cambia el color de la célula en la que se encuentra y
+            se mueve en la dirección correspondiente.
+          </span>
+        </div>
+        <div class="tooltip reglas">
+          <p>reglas</p>
+          <span class="tooltip-content">
+            Si la hormiga se encuentra en una célula blanca, gira a la derecha
+            90 grados, cambia el color de la célula a negro y se mueve hacia
+            adelante.
+            <br />
+            Si la hormiga se encuentra en una célula negra, gira a la izquierda
+            90 grados, cambia el color de la célula a blanco y se mueve hacia
+            adelante.
+          </span>
+        </div>
+        <div class="tooltip reglas">
+          <p>patrón producido</p>
+          <span class="tooltip-content">
+            <img src="img/ant-final.png" />
+          </span>
+        </div>
+        <div class="tooltip reglas">
+          <p>importancia</p>
+          <span class="tooltip-content">
+            La hormiga de Langton es un ejemplo interesante de cómo la
+            complejidad puede surgir a partir de reglas simples y cómo los
+            sistemas dinámicos pueden producir comportamientos sorprendentes.
+            Además, ha sido útil en la investigación de la teoría de la
+            complejidad y la inteligencia artificial.
+          </span>
+        </div>
+        <div class="tooltip reglas">
+          <p>créditos</p>
+          <span class="tooltip-content">
+            Simulación desarrollada por Aydin Dueñas Salman como proyecto final
+            para la materia de Simulación de Sistemas para Ingeniería de
+            Software en la Universidad de Sonora
+          </span>
+        </div>
+      </div>
+      <div id="displayAntBehavior"></div>
 
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<body>
-  <div>
-    <div id="displayAntBehavior"></div>
-    <div>
-      <span class="step-count">Step Count:</span>
-      <span id="iterationCount"></span>
+      <div class="simulation">
+        <canvas id="theBoard"></canvas>
+      </div>
     </div>
-    <div>
-      <canvas id="theBoard"></canvas>
-    </div>
-  </div>
 
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      var sim = new Simulation();
+      sim.run();
 
-  <script>
-    var sim = new Simulation();
-    sim.run();
-  </script>
-</body>
+      function restartSimulation() {
+        sim.reset();
+      }
+    </script>
+  </body>
+</html>

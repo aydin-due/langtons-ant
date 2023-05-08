@@ -41,7 +41,7 @@ function Simulation() {
       function c() {
         return void 0 != b
           ? b
-          : (b = [{ turns: "RL".split(""), colors: ["#5f5", "#f55"] }]);
+          : (b = [{ turns: "RL".split(""), colors: ["#a44200", "#d5bf86"] }]);
       }
       var b,
         a = {
@@ -118,7 +118,7 @@ function Simulation() {
           this.setCanvasSize(a);
           for (var c = h; c < a; c += g) f.moveTo(c, 0), f.lineTo(c, a - g);
           for (var d = h; d < a; d += g) f.moveTo(0, d), f.lineTo(a - g, d);
-          (f.strokeStyle = "#555"), f.stroke();
+          (f.strokeStyle = "#f3f3ce"), f.stroke();
         },
         printCellState: function (a) {
           var c = e.x * g + 1,

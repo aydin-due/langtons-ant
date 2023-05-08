@@ -1,0 +1,134 @@
+body {
+  background-color: #f1f0cc;
+  font-family: "Roboto Flex", sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+h1 {
+  margin: 50px 10px 20px 10px;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
+p {
+  font-size: 24px;
+  margin: 10px 10px 0 20px;
+  color: #d9d9d9;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar {
+  color: white;
+  min-height: 600px;
+  width: 20%;
+  min-width: 325px;
+  background-color: #252422;
+  border-radius: 20px;
+}
+
+.simulation {
+  margin-right: 100px;
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 10px 0 0;
+}
+
+.counter-container p {
+    color: white;
+}
+
+.counter {
+  font-size: 34px;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 50px 0 50px 0;
+}
+
+.button img {
+  height: 25px;
+  width: 25px;
+  margin: 0 20px 0 20px;
+  cursor: pointer;
+}
+
+.light {
+  display: none;
+}
+
+.button:hover .light {
+  display: block;
+}
+.button:hover .dark {
+  display: none;
+}
+
+.tooltip {
+  position: relative;
+  color: #d9d9d9;
+}
+
+.tooltip .tooltip-content {
+  visibility: hidden;
+  width: 300px;
+  background-color: #252422;
+  color: #fff;
+  text-align: center;
+  padding: 10px 10px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.tooltip:hover p {
+  color: white;
+}
+.tooltip:hover .tooltip-content {
+  visibility: visible;
+}
+
+.tooltip .tooltip-content::after {
+  content: " ";
+  position: absolute;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+.info .tooltip-content::after {
+  top: 7%;
+}
+
+.reglas .tooltip-content::after {
+  top: 15%;
+}
+
+.tooltip-content img {
+    width: 200px;
+    margin: 0 20px 0 20px;
+}
